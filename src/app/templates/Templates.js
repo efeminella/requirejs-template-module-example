@@ -1,4 +1,3 @@
-
 define( function( require ) {
 	// Define template engine dependency and require each template
 	var Handlebars = require('Handlebars')
@@ -11,8 +10,8 @@ define( function( require ) {
 	// compiled template, or, if a context is passed, invokes the compiled 
 	// template with the given context.
 	var _compiled = function(tpl, context) {
-		var compiled = Handlebars.compile(tpl);
-		return context ? compiled(context) : compiled;
+	    var compiled = Handlebars.compile(tpl);
+	    return context ? compiled(context) : compiled;
 	};
 
 	// Expose a public API which provides named methods for retrieving
