@@ -19,16 +19,16 @@ define( function( require ) {
 	// compiled templates upon subsequent invocations
 	return {
 		template1: function() {
-			return _compiled.call( this, _template1, arguments[0]);
+			return _compiled(_template1, arguments[0]);
 		},
 		template2: function() {
-			return _compiled.call( this, _template2, arguments[0]);
+			return _compiled(_template2, arguments[0]);
 		},
 		template3: function() {
-			return _compiled.call( this, _template3, arguments[0]);
+			return _compiled(_template3, arguments[0]);
 		},
 		template4: function() {
-			return _compiled.call( this, _template4, arguments[0]);
+			return _compiled(_template4, arguments[0]);
 		}
 	}
 });
