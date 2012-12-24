@@ -1,28 +1,35 @@
 
 define( function( require ) {
-	
-	// define template engine dependency and require each template
+	// Define template engine dependency and require each template
 	var Handlebars = require('Handlebars')
 	  , _template1 = require('text!app/templates/template-1.tpl')
 	  , _template2 = require('text!app/templates/template-2.tpl')
 	  , _template3 = require('text!app/templates/template-3.tpl')
 	  , _template4 = require('text!app/templates/template-4.tpl');
 
-	// expose a public API which provides named methods for retrieving
+	// Given a template and an optional arguments object, returns the 
+	// compiled template, or, if a context is passed, invokes the compiled 
+	// template with the given context.
+	var _compiled = function(tpl, context) {
+		var compiled = Handlebars.compile(tpl);
+		return context ? compiled(context) : compiled;
+	};
+
+	// Expose a public API which provides named methods for retrieving
 	// each compiled template; defer to Handlebars to cache previously
 	// compiled templates upon subsequent invocations
 	return {
 		template1: function() {
-			return Handlebars.compile( _template1 );
+			return _compiled.call( this, _template1, arguments[0]);
 		},
 		template2: function() {
-			return Handlebars.compile( _template2 );
+			return _compiled.call( this, _template2, arguments[0]);
 		},
 		template3: function() {
-			return Handlebars.compile( _template3 );
+			return _compiled.call( this, _template3, arguments[0]);
 		},
 		template4: function() {
-			return Handlebars.compile( _template4 );
+			return _compiled.call( this, _template4, arguments[0]);
 		}
 	}
 });
