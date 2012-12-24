@@ -1,4 +1,4 @@
-Requirejs Template Module Example
+RequireJS Template Module Example
 =================================
 
 An example [Template Module](http://www.ericfeminella.com/blog/2012/07/15/managing-client-side-templates-with-requirejs/) implementation in the context of RequireJS, Backbone and Handlerbars.
